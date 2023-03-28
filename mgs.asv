@@ -1,0 +1,25 @@
+%% Caclulate QR Factorization by Modified ram-Schmidt and Householder Orthogonalization ...
+function [Q,R]=mgs(A)
+[m,n]=size(A);
+
+%Initial Q, R matirx
+Q=zeros(m,n);
+R=zeros(n,n);
+
+% m<n error
+if(m<n)
+    error('m>=0 is the initial conditions')
+end
+
+for i=1:n
+    Q(:,i)=A(:,i);
+end
+
+for i=1:n
+  R(i,i)=norm(Q(:,i),2);
+  Q(:,i)=Q(:,i)/R(i,i);
+  for j=(i+1):n
+    R(i,j)=Q(:,i)'*Q(:,j);
+    Q(:,j)=Q(:,j)-R(i,j)*Q(:,i);
+  end
+end
