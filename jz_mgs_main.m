@@ -12,23 +12,23 @@ x1=R\(R'\(A'*b))
 Error1 = norm((A*x1) - b)
 
 
-QR factorization computed by mgs.m (modified Gram-Schmid Exercise 8.2)
+%QR factorization computed by mgs.m (modified Gram-Schmid Exercise 8.2)
 % Matlab Code #7
-[Q,R] = MGS(A);
+[Q,R] = jz_mgs(A)
 x2=R\(Q'*b)
 Error2 = norm((A*x2) - b)
 
 
-QR factorization computed by house.m (Householder triangularization, Exercise 10.2)
+%QR factorization computed by house.m (Householder triangularization, Exercise 10.2)
 % Matlab Code #8
-[W1,R] = house(A);
-Q = formQ(W1);
-x3=R\(Q'*b)
-Error3 = norm((A*x3) - b)
+%[W1,R] = house(A);
+%Q = formQ(W1);
+%x3=R\(Q'*b)
+%Error3 = norm((A*x3) - b)
 
 
 
-QR factorization computed by MATLAB’s qr.m (also Householder triangularization)
+%QR factorization computed by MATLAB%s qr.m (also Householder triangularization)
 % Matlab Code #9
 [Q,R]=qr(A,0);
 x4=R\(Q'*b)
@@ -42,7 +42,7 @@ x5=A\b
 Error5 = norm((A*x5) - b)
 
 
-SVD, MATLAB’s svd.m
+%SVD, MATLAB svd.m
 % Matlab Code #11
 [U,S,V]=svd(A);
 x6=V*(S\(U'*b))
@@ -50,4 +50,4 @@ Error6 = norm((A*x6) - b)
 
 
 
-The calculations above will produce six lists of twelve coefficients. In each list, shade with red the digits that appear to be wrong (affected by rounding error). Comment on what differences you observe. Do the normal equations exhibit instability? You do not have to explain your explain your obervations.
+%The calculations above will produce six lists of twelve coefficients. In each list, shade with red the digits that appear to be wrong (affected by rounding error). Comment on what differences you observe. Do the normal equations exhibit instability? You do not have to explain your explain your obervations.
