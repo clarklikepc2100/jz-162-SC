@@ -6,4 +6,4 @@ A=          [1 2; ...
             4 5;];
 
 %run mgs
-[Q,R]=jz_mgs(A);
+[Q,R]=jz_mgs(A)
