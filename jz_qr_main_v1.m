@@ -18,14 +18,14 @@ v1=R\(R'\(A'*b))
 error_a = norm((A*v1) - b)
 
 
-%QR factorization computed by mgs.m (modified Gram-Schmid)
+%QR factorization computed by  (modified Gram-Schmid)
 
 [Q,R] = jz_qr_mgs(A)
 v2=R\(Q'*b)
 error_b = norm((A*v2) - b)
 
 
-%QR factorization computed by house.m (Householder triangularization)
+%QR factorization computed by (Householder triangularization)
 
 [Q,R]=jz_qr_house1(A);
 v3=R\(Q'*b)
@@ -43,12 +43,7 @@ v=A
 v5=A\b
 error_e = norm((v*v5) - b)
 
-%SVD, MATLAB svd.m
-% Matlab Code #11
+%SVD, MATLAB 
 [U,S,V]=svd(A);
 v6=V*(S\(U'*b))
 error_f = norm((A*v6) - b)
-
-
-
-%The calculations above will produce six lists of twelve coefficients. In each list, shade with red the digits that appear to be wrong (affected by rounding error_). Comment on what differences you observe. Do the normal equations exhibit instability? You do not have to explain your explain your obervations.
