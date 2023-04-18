@@ -1,5 +1,5 @@
 
-% Initial
+% Network. nnstart or newff
 close all, clear all, fclose all,clc;
 
 % Matlab Intital Matrix
@@ -18,36 +18,42 @@ v1=R\(R'\(A'*b))
 error_a = norm((A*v1) - b)
 
 
-%QR factorization computed by mgs.m (modified Gram-Schmid)
-
+%QR factorization computed by mgs.m (modified Gram-Schmid Exercise 8.2)
+% Matlab Code #7
 [Q,R] = jz_qr_mgs(A)
 v2=R\(Q'*b)
 error_b = norm((A*v2) - b)
 
 
-%QR factorization computed by house.m (Householder triangularization)
-
+%QR factorization computed by house.m (Householder triangularization, Exercise 10.2)
+%Matlab Code #8
+% [W1,R] = jz_qr_house2(A);
+% Q = jz_orthQ(W1);
 [Q,R]=jz_qr_house1(A);
 v3=R\(Q'*b)
 error_c = norm((A*v3) - b)
 
 
-%QR factorization computed 
+
+%QR factorization computed by MATLAB%s qr.m (also Householder triangularization)
+% Matlab Code #9
 [Q,R]=qr(A,0);
 v4=R\(Q'*b)
 error_d = norm((A*v4) - b)
 
 
-% Matlab code
-v=A
+
+x=A
+% Matlab Code #10
 v5=A\b
-error_e = norm((v*v5) - b)
+error_e = norm((v*x5) - b)
+
 
 %SVD, MATLAB svd.m
 % Matlab Code #11
 [U,S,V]=svd(A);
 v6=V*(S\(U'*b))
-error_f = norm((A*v6) - b)
+error_6 = norm((A*6) - b)
 
 
 

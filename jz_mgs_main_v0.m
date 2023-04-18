@@ -1,4 +1,5 @@
-
+% Network. nnstart or newff
+close all, clear all, fclose all,clc;
 % A matrix
 A=          [1 2; ...
             2 3; ...
