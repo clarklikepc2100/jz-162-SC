@@ -72,3 +72,5 @@ if(np.linalg.det(A_square)!=0):
 
 
 
+
+
